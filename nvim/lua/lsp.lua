@@ -1,3 +1,11 @@
+-- Set up Mason
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = { "pyright", "clangd" },  -- you can add more
+  automatic_installation = true,
+})
+
+-- Set up LSP servers
 local lspconfig = require("lspconfig")
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
