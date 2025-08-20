@@ -13,12 +13,16 @@ require("lazy").setup({
     -- UI
     { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
     { "nvim-lualine/lualine.nvim", config = true },
+
     {
-      "folke/tokyonight.nvim",
-      lazy = false,
-      priority = 1000,
+      "navarasu/onedark.nvim",
+      priority = 1000, -- make sure to load this before all the other start plugins
       config = function()
-        vim.cmd.colorscheme("tokyonight-night")
+        require('onedark').setup {
+          style = 'darker'
+        }
+        -- Enable theme
+        require('onedark').load()
       end
     },
 
@@ -38,7 +42,13 @@ require("lazy").setup({
               offsets = {
                 {
                 filetype = "NvimTree",
-                text = "File Explorer",
+                text = function()
+                  local api = require("nvim-tree.api")
+                  local root = api.tree.get_nodes().absolute_path
+                  -- only folder name
+                  return vim.fn.fnamemodify(root, ":t")
+                  -- if you prefer full path, just return root
+                end,
                 text_align = "center",
                 -- padding = 1,  -- adds space on the left/right
                 }
@@ -57,17 +67,26 @@ require("lazy").setup({
         dependencies = { "nvim-tree/nvim-web-devicons" },
         config = function()
             require("nvim-tree").setup({
+
                 view = {
                     side = "right", -- Move tree to right side
-                    width = 30,
-                },
+                    adaptive_size = true,
+                },    
+                renderer = {
+                        root_folder_label = false
+                    },
+                sync_root_with_cwd = true,       -- keep root synced with Neovim’s cwd
+                respect_buf_cwd = true,          -- respect buffer cwd
                 update_focused_file = {
                     enable = true,
-                    update_cwd = true,
+                    update_root = true,            -- root changes to file’s directory
                 },
+                
             })
         end
     },
+
+    -- Telescope
     {
       'nvim-telescope/telescope.nvim',
       dependencies = { 'nvim-lua/plenary.nvim' }
