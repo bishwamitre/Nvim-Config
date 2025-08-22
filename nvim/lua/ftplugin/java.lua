@@ -23,7 +23,10 @@ local config = {
   },
 }
 
-jdtls.start_or_attach(config)
+-- Make sure this only runs for Java files
+if vim.bo.filetype == "java" then
+  jdtls.start_or_attach(config)
+end
 
 -- Java-specific keymaps
 vim.keymap.set("n", "<leader>oi", jdtls.organize_imports, { buffer = true })
