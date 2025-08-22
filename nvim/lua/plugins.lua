@@ -94,12 +94,23 @@ require("lazy").setup({
     },
 
 
-
     -- LSP
     { "neovim/nvim-lspconfig" },
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
-
+    { "mfussenegger/nvim-jdtls" }, -- Java specific helper
+    {
+        "mason-org/mason.nvim",
+        opts = {
+            ui = {
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗"
+                }
+            }
+        }
+    },
     -- Autocompletion
     { "hrsh7th/nvim-cmp" },
     { "hrsh7th/cmp-nvim-lsp" },
