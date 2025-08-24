@@ -165,6 +165,12 @@ require("lazy").setup({
         },
     },
 
+    -- auto {}
+    {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      config = true,
+    },
 
     -- Telescope
     {
@@ -173,14 +179,9 @@ require("lazy").setup({
     },
 
     -- LSP
-    { "neovim/nvim-lspconfig" },
-    { "mason-org/mason.nvim" },
-    { "mason-org/mason-lspconfig.nvim" },
-    {
-      "windwp/nvim-autopairs",
-      event = "InsertEnter",
-      config = true,
-    },
+    { "williamboman/mason.nvim", build = ":MasonUpdate", config = true },
+    { "williamboman/mason-lspconfig.nvim", config = true },
+    { "mfussenegger/nvim-jdtls", ft = { "java" } },
 
     -- Autocompletion
     { "hrsh7th/nvim-cmp" },
