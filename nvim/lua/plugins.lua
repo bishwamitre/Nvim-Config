@@ -176,6 +176,11 @@ require("lazy").setup({
     { "neovim/nvim-lspconfig" },
     { "mason-org/mason.nvim" },
     { "mason-org/mason-lspconfig.nvim" },
+    {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      config = true,
+    },
 
     -- Autocompletion
     { "hrsh7th/nvim-cmp" },
