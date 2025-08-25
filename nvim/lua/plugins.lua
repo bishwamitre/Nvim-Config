@@ -179,6 +179,7 @@ require("lazy").setup({
     },
 
     -- LSP
+    { "neovim/nvim-lspconfig" },
     { "williamboman/mason.nvim", build = ":MasonUpdate", config = true },
     { "williamboman/mason-lspconfig.nvim", config = true },
     { "mfussenegger/nvim-jdtls", ft = { "java" } },
