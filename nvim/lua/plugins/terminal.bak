@@ -1,0 +1,14 @@
+return {
+  "akinsho/toggleterm.nvim",
+  opts = {
+    open_mapping = [[<A-t>]], -- or any keybinding you like
+    start_in_insert = true,
+    direction = "float",
+    size = 20,
+    float_opts = {
+      border = "curved", -- options: single, double, shadow, curved
+    },
+    dir = "cmd",
+    autochdir = true, -- when neovim changes it current directory the terminal will change it's own when next it's opened
+  },
+}

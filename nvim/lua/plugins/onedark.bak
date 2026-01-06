@@ -1,0 +1,14 @@
+return {
+  {
+    "monsonjeremy/onedark.nvim",
+    priority = 1000,
+    config = function()
+      require("onedark").setup({
+        style = "cool", -- or 'darker', 'cool', 'deep', 'warm', 'warmer'
+        transparent = true, -- Enables transparent background
+        term_colors = true,
+      })
+      require("onedark").load()
+    end,
+  },
+}
