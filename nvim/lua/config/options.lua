@@ -4,7 +4,6 @@
 
 -- Set font and size
 vim.o.guifont = "IBM Plex Mono:h20"
--- vim.g.colorscheme = "onedark"
 -- Basic Settings
 vim.opt.wrap = true
 vim.opt.number = true
@@ -14,3 +13,7 @@ vim.opt.shiftwidth = 4
 vim.opt.softtabstop = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
+vim.opt.termguicolors = true
+vim.opt.winbar = " " -- single space line between bufferline and code
+vim.opt.winblend = 0
+vim.opt.pumblend = 0

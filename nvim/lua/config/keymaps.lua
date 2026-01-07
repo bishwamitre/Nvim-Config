@@ -5,3 +5,7 @@
 -- In insert mode: Ctrl+Backspace deletes the previous word
 vim.keymap.set("i", "<C-BS>", "<C-w>", { noremap = true })
 vim.keymap.set("i", "<C-h>", "<C-w>", { noremap = true }) -- fallback
+
+-- In insert mode: Ctrl+Backspace deletes the previous word
+vim.keymap.set("i", "<C-BS>", "<C-w>", { noremap = true })
+vim.keymap.set("i", "<C-h>", "<C-w>", { noremap = true }) -- fallback
