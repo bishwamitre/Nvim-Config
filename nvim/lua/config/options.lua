@@ -3,7 +3,7 @@
 -- Add any additional options here
 
 -- Set font and size
-vim.o.guifont = "IBM Plex Mono:h20"
+vim.o.guifont = "BlexMono Nerd Font:h13"
 -- Basic Settings
 vim.opt.wrap = true
 vim.opt.number = true
